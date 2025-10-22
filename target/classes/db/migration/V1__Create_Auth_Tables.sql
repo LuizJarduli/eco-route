@@ -6,7 +6,7 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
-    profile_pic VARCHAR(255) NOT NULL,
+    profile_pic VARCHAR(255) NULL,
 
     -- Campos de auditoria
     created_at DATETIME(6) NOT NULL,
@@ -36,15 +36,15 @@ CREATE TABLE user_roles (
 );
 
 -- Inserir papéis (roles) padrão
-INSERT INTO roles (name) VALUES ('ADMIN');
-INSERT INTO roles (name) VALUES ('USER');
+INSERT INTO roles (name, created_at, updated_at) VALUES ('ADMIN', NOW(6), NOW(6));
+INSERT INTO roles (name, created_at, updated_at) VALUES ('USER', NOW(6), NOW(6));
 
 -- Inserir user admin
 INSERT INTO users (id, username, password, name, profile_pic, created_at, updated_at, deleted_at)
 VALUES (
     'c67c33ce-43b5-47de-b8f0-dbb8ed73d5eb',
     'admin@gmail.com',
-    '$2a$10$3g.E3a.E6c/zP5q.F9b.B.xY2b.Z8d.E5g.H1i.J2k.L3m.N4o.P5q', -- 3. SENHA HASHED (ex: 'admin123')
+    '$2a$10$8svvNFN8rNzk3wEWrz22z.MFw/7h98GcWrq1Ai0tu54C7zkGBiQMq', -- 3. SENHA HASHED (ex: 'admin123')
     'Administrator',
     NULL,
     NOW(6),
