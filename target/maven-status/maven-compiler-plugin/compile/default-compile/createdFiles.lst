@@ -8,6 +8,7 @@ com/devpro/ecoroute/services/TokenService$TokenData.class
 com/devpro/ecoroute/config/SecurityConfig.class
 com/devpro/ecoroute/dtos/auth/AuthResponseDTO.class
 com/devpro/ecoroute/models/Role.class
+com/devpro/ecoroute/dtos/base/PagedResponseDTO.class
 com/devpro/ecoroute/services/UserService.class
 com/devpro/ecoroute/services/TokenService.class
 com/devpro/ecoroute/infra/security/SecurityFilter.class

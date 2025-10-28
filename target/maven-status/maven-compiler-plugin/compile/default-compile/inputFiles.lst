@@ -5,6 +5,7 @@
 /Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/controllers/UserController.java
 /Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/dtos/auth/AuthRequestDTO.java
 /Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/dtos/auth/AuthResponseDTO.java
+/Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/dtos/base/PagedResponseDTO.java
 /Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/dtos/error/ApiErrorResponse.java
 /Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/dtos/user/UserResponseDTO.java
 /Users/luiz.leite/Documents/side-projects/eco-route/src/main/java/com/devpro/ecoroute/exceptions/GlobalExceptionHandler.java

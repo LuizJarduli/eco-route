@@ -4,9 +4,10 @@ import com.devpro.ecoroute.models.User;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
+import java.util.UUID;
 
 public record UserResponseDTO(
-        String id,
+        UUID id,
         String username,
         String name,
         String profile_pic,
@@ -18,13 +19,16 @@ public record UserResponseDTO(
         String deletedAtFormatted = Optional.ofNullable(user.getDeletedAt())
                 .map(dateTime -> dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
                 .orElse(null);
+        String createdAtFormatted = user.getCreatedAt().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        String updatedAtFormatted = user.getUpdatedAt().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+
         return new UserResponseDTO(
-                user.getId().toString(),
+                user.getId(),
                 user.getUsername(),
                 user.getName(),
                 user.getProfilePic(),
-                user.getCreatedAt().format(DateTimeFormatter.ISO_DATE),
-                user.getUpdatedAt().format(DateTimeFormatter.ISO_DATE),
+                createdAtFormatted,
+                updatedAtFormatted,
                 deletedAtFormatted
         );
     }
