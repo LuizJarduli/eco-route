@@ -4,6 +4,7 @@ import com.devpro.ecoroute.dtos.auth.AuthRequestDTO;
 import com.devpro.ecoroute.dtos.auth.AuthResponseDTO;
 import com.devpro.ecoroute.models.User;
 import com.devpro.ecoroute.services.TokenService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,6 +23,7 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
+    @Operation(summary = "Autentica um usuário", description = "Realiza o login e retorna um token JWT.", security = {})
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDTO> login(@RequestBody AuthRequestDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.username(), data.password());

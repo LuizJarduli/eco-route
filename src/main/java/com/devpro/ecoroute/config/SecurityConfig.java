@@ -23,6 +23,12 @@ public class SecurityConfig {
     @Autowired
     private SecurityFilter securityFilter;
 
+    private static final String[] SWAGGER_PATHS = {
+            "/v3/api-docs/**",
+            "/swagger-ui.html",
+            "/swagger-ui/**"
+    };
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
@@ -31,7 +37,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         // Permite acesso PÚBLICO ao endpoint de login
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
+                        // Libera o swagger
+                        .requestMatchers(SWAGGER_PATHS).permitAll()
                         .requestMatchers(HttpMethod.GET, "/actuator/health").permitAll()
                         // .requestMatchers(HttpMethod.GET, "/users/hash/**").permitAll()
                         // Qualquer outra requisição PRECISA de autenticação

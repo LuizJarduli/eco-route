@@ -33,6 +33,16 @@ services:
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: password
       API_SECURITY_TOKEN_SECRET: ${API_SECURITY_TOKEN_SECRET}
+    develop:
+      watch:
+        # Sync on file change boys
+        - path: ./target/classes
+          action: sync
+          target: /app/classes
+
+       # Restart the whole project, great for config files
+        - path: ./pom.xml
+          action: rebuild
 
 volumes:
   mysql-data:
