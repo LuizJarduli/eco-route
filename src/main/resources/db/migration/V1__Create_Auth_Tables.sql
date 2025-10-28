@@ -9,9 +9,9 @@ CREATE TABLE users (
     profile_pic VARCHAR(255) NULL,
 
     -- Campos de auditoria
-    created_at DATETIME(6) NOT NULL,
-    updated_at DATETIME(6) NOT NULL,
-    deleted_at DATETIME(6) NULL
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    deleted_at DATETIME NULL
 );
 
 -- Tabela de Papéis (Roles) - Você pode decidir se ela precisa de auditoria também.
@@ -21,9 +21,9 @@ CREATE TABLE roles (
     name VARCHAR(100) NOT NULL UNIQUE,
 
     -- Campos de auditoria
-    created_at DATETIME(6) NOT NULL,
-    updated_at DATETIME(6) NOT NULL,
-    deleted_at DATETIME(6) NULL
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    deleted_at DATETIME NULL
 );
 
 -- Tabela de Junção (geralmente não precisa de campos de auditoria)
@@ -36,8 +36,8 @@ CREATE TABLE user_roles (
 );
 
 -- Inserir papéis (roles) padrão
-INSERT INTO roles (name, created_at, updated_at) VALUES ('ADMIN', NOW(6), NOW(6));
-INSERT INTO roles (name, created_at, updated_at) VALUES ('USER', NOW(6), NOW(6));
+INSERT INTO roles (name, created_at, updated_at) VALUES ('ADMIN', NOW(), NOW());
+INSERT INTO roles (name, created_at, updated_at) VALUES ('USER', NOW(), NOW());
 
 -- Inserir user admin
 INSERT INTO users (id, username, password, name, profile_pic, created_at, updated_at, deleted_at)
@@ -47,8 +47,8 @@ VALUES (
     '$2a$10$8svvNFN8rNzk3wEWrz22z.MFw/7h98GcWrq1Ai0tu54C7zkGBiQMq', -- 3. SENHA HASHED (ex: 'admin123')
     'Administrator',
     NULL,
-    NOW(6),
-    NOW(6),
+    NOW(),
+    NOW(),
     NULL
 );
 
