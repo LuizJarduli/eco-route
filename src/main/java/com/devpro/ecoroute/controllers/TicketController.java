@@ -4,7 +4,6 @@ import com.devpro.ecoroute.dtos.base.PagedResponseDTO;
 import com.devpro.ecoroute.dtos.ticket.HeatmapPointDTO;
 import com.devpro.ecoroute.dtos.ticket.TicketRequestDTO;
 import com.devpro.ecoroute.dtos.ticket.TicketResponseDTO;
-import com.devpro.ecoroute.dtos.user.UserResponseDTO;
 import com.devpro.ecoroute.services.TicketService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
