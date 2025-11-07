@@ -3,6 +3,7 @@ package com.devpro.ecoroute.controllers;
 import com.devpro.ecoroute.dtos.base.PagedResponseDTO;
 import com.devpro.ecoroute.dtos.user.UserResponseDTO;
 import com.devpro.ecoroute.services.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +19,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
+@Tag(name = "Users", description = "Endpoints para consultar usuários")
 public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
